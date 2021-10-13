@@ -1,6 +1,6 @@
 extends Node2D
 
-var gmData
+var gmData : Object
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -10,9 +10,13 @@ var gmData
 func _ready():
 	pass
 
+func _process(_delta):
+	if gmData != null:
+		$Player.text = gmData.player.name
+		
 func set_game_object(gm : Object):
 	gmData = gm
-	$Player.text = gm.player.name
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass

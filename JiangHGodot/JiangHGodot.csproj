@@ -3,6 +3,9 @@
     <TargetFramework>net472</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
+    <ProjectReference Include="..\JiangHKernels\JiangHKernels.csproj" />
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="System.IO.Compression" />
   </ItemGroup>
 </Project>

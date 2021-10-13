@@ -1,4 +1,6 @@
 using Godot;
+using JiangHKernels;
+using JiangHKernels.Interfaces;
 using JiangHGodot.Global;
 using JiangHGodot.Mod;
 using System;
@@ -10,29 +12,34 @@ public class InnerScene : Node2D
     // private string b = "text";
 
     // Called when the node enters the scene tree for the first time.
+
+    Facade facade;
+    int a = 0;
     public override void _Ready()
     {
         var modMgr = new ModMgr(GlobalPath.mod);
 
         var mainScene = modMgr.native.LoadScene("Main.tscn").Instance();
 
-        var tran = new TranObj();
-        tran.str = "success2!";
-        mainScene.Call("set_label", tran);
+        facade = new Facade();
+
+        mainScene.Call("set_game_object", facade);
 
         this.AddChild(mainScene);
     }
 
-    public class TranObj : Godot.Object
+    public override void _Process(float delta)
     {
-        public string str;
-    }
+        a++;
 
-    //  // Called every frame. 'delta' is the elapsed time since the previous frame.
-    //  public override void _Process(float delta)
-    //  {
-    //      
-    //  }
+        GD.Print(a);
+        if(a == 500)
+        {
+            facade.Changed();
+        }
+
+        base._Process(delta);
+    }
 }
 
 
