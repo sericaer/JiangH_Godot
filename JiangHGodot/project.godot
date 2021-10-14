@@ -19,6 +19,10 @@ config/icon="res://icon.png"
 
 Global="*res://Global.gd"
 
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/ui_design_tool/plugin.cfg" )
+
 [mono]
 
 export/export_assemblies_inside_pck=false

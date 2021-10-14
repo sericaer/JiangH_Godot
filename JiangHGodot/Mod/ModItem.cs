@@ -26,6 +26,11 @@ namespace JiangHGodot.Mod
                 {
                     GD.Print($"ZipContent:{entry.FullName}");
 
+                    if(entry.FullName.StartsWith("addons"))
+                    {
+                        continue;
+                    }
+
                     if(!entry.FullName.StartsWith(tscnPathBegin))
                     {
                         throw new Exception($"Load {entry.FullName} error, file must start with {tscnPathBegin}");
