@@ -15,6 +15,10 @@ run/main_scene="res://InnerScene.tscn"
 boot_splash/image="res://BootSplash.png"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*res://Global.gd"
+
 [mono]
 
 export/export_assemblies_inside_pck=false

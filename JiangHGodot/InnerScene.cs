@@ -21,7 +21,9 @@ public class InnerScene : Node2D
 
         var mainScene = modMgr.native.LoadScene("Main.tscn").Instance();
 
+
         facade = new Facade();
+        GetNode("../Global").Call("set_game_object", facade);
 
         mainScene.Call("set_game_object", facade);
 
@@ -33,7 +35,7 @@ public class InnerScene : Node2D
         a++;
 
         GD.Print(a);
-        if(a == 500)
+        if (a == 500)
         {
             facade.Changed();
         }

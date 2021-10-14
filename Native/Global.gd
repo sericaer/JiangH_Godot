@@ -1,6 +1,8 @@
-extends Node2D
+extends Node
+
 
 var gmData : Object
+
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -8,12 +10,11 @@ var gmData : Object
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	pass # Replace with function body.
 
-func _process(_delta):
-	if Global.gmData != null:
-		$Player.text = Global.gmData.player.name
-		
+func set_game_object(gm : Object):
+	gmData = gm
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
