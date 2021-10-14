@@ -26,5 +26,11 @@ namespace JiangHKernels
     public class Person : Godot.Object
     {
         public string name;
+        public int businessCount { get; private set; }
+
+        public Person()
+        {
+            businessCount = 12;
+        }
     }
 }
