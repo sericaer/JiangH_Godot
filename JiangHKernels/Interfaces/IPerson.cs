@@ -21,11 +21,9 @@ namespace JiangHKernels.Interfaces
 
         ISociety society { get; }
 
-        IEnumerable<IBusiness> businesses { get; }
+        IBusiness[] GetBusinesses();
 
-        double CalcBusinessEfficent();
-
-
+        //double CalcBusinessEfficent();
     }
 
     public class PersonDef

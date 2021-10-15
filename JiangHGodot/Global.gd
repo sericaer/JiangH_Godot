@@ -22,6 +22,9 @@ func set_game_object(gm : Object):
 #	pass
 
 class GMPlayer:
-	var name : String
-	var businessCount : int 
+	var full_name : String
+	
+	func get_businesses()->Array:
+		return []
+	
 

@@ -13,8 +13,8 @@ func _ready():
 func _process(_delta):
 	if Global.player == null:
 		return
-	text = Global.player.name
-	$Info/Business.text = str(Global.player.businessCount+1)
+	text = Global.player.full_name
+	$Info/Business.text = str(Global.player.get_businesses().size())
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
